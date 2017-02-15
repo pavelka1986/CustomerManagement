@@ -11,7 +11,8 @@
                         <ul>
                             @foreach($customer as $_customer)
                                 <li><strong>{{ $_customer->name }}</strong><br>
-                                    {{ $_customer->description }}</li>
+                                    <p>{{ $_customer->description }}<br>
+                                    {{ $_customer->address }}</p></li>
                             @endforeach
                         </ul>
                     </div>
