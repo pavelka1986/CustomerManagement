@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Faker\Factory as Faker;
 
 class CustomerTableSeeder extends Seeder
 {
@@ -12,11 +12,17 @@ class CustomerTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('customer')->insert([
-            'name' => str_random(10),
-            'description' => str_random(50),
-            'user_id' => '1',
-            'active' => 1,
-        ]);
+        $faker = Faker::create();
+
+        foreach(range(1,30) as $index)
+        {
+            DB::table('customer')->insert([
+                'name'        => $faker->company(),
+                'description' => $faker->paragraph(6),
+                'address' => $faker->address(),
+                'user_id'     => $faker->randomElement(array(1,2,3)),
+                'active'      => $faker->boolean(),
+            ]);
+        }
     }
 }
