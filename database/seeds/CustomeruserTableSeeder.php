@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
-class CustomerTableSeeder extends Seeder
+class CustomeruserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,11 +16,9 @@ class CustomerTableSeeder extends Seeder
 
         foreach(range(1,30) as $index)
         {
-            DB::table('customer')->insert([
-                'name'        => $faker->company(),
-                'description' => $faker->paragraph(6),
-                'address' => $faker->address(),
-                'active'      => $faker->boolean(),
+            DB::table('customeruser')->insert([
+                'user_id'     => $faker->randomElement(array(1,2,3)),
+                'customer_id'      => $faker->numberBetween($min = 1, $max = 30)
             ]);
         }
     }

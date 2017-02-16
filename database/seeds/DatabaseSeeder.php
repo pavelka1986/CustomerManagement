@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
 
         //Customer::truncate();
         $this->call(CustomerTableSeeder::class);
+
+        //Customer::truncate();
+        $this->call(CustomeruserTableSeeder::class);
     }
 }

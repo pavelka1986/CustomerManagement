@@ -22,11 +22,6 @@ class Customer extends Migration
             $table->text('address');
             $table->timestamps();
         });
-
-        Schema::table('customer', function($table) {
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-        });
     }
 
     /**
