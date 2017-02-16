@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -21,10 +22,13 @@ class CustomerController extends Controller
 
     public function index()
     {
-        $customer = Customer::all();
+        //$customer = Customer::all();
         $user = Auth::user();
 
-        return view('customer.index', compact('customer','user'));
+        $customer = User::find(Auth::id());
+        $custom = $customer->customer;
+
+        return view('customer.index', compact('custom','user'));
     }
 
     /**

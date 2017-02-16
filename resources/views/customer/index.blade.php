@@ -9,10 +9,10 @@
 
                     <div class="panel-body">
                         <ul>
-                            @foreach($customer as $_customer)
-                                <li><strong>{{ $_customer->name }}</strong><br>
-                                    <p>{{ $_customer->description }}<br>
-                                        {{ $_customer->address }}</p></li>
+                            @foreach($custom as $_customer)
+                                <li><strong>{{ $_customer['name'] }}</strong><br>
+                                    <p>{{ $_customer['description'] }}<br>
+                                        {{ $_customer['address'] }}</p></li>
                             @endforeach
                         </ul>
                     </div>
