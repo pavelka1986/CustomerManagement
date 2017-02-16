@@ -21,10 +21,10 @@
                                             <input name="name" value="{{ $_customer['name'] }}" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <textarea name="description" class="form-control" style="height: 200px">{{ $_customer['description'] }}</textarea>
+                                            <textarea name="description" class="form-control">{{ $_customer['description'] }}</textarea>
                                         </div>
                                         <div class="form-group">
-                                            <textarea name="address" class="form-control">{{ $_customer['address'] }}</textarea>
+                                            <input name="address" value="{{ $_customer['address'] }}" class="form-control">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>

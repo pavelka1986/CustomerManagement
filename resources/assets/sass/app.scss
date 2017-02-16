@@ -7,3 +7,17 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+ul.list-group {
+  li {
+    input,textarea
+    {
+      border: none;
+      box-shadow: none;
+      text-shadow: none!important;
+    }
+    textarea {
+      min-height: 150px;
+    }
+  }
+}
