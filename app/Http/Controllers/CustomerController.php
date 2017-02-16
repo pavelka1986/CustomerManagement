@@ -49,7 +49,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -83,7 +83,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $customer = Customer::find($request->input('id'));
+        $all = $request->all();
+        $customer->update($all);
+
+        return redirect('/home');
     }
 
     /**
