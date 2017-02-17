@@ -10,5 +10,5 @@ class Customer extends Model
 
     protected $fillable = ["name", "description", "address", "active"];
 
-    protected $hidden = ["created_at", "updated_at", "id"];
+    protected $hidden = ["created_at", "updated_at", "id", "_token"];
 }

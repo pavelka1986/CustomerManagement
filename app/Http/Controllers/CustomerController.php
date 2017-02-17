@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\User;
+use App\Customeruser;
 use Auth;
 use Illuminate\Http\Request;
+
+//https://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers
 
 class CustomerController extends Controller
 {
@@ -38,7 +41,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -49,7 +52,19 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $all = $request->except('_token');
+        $customer = Customer::create($all);
+
+        Customeruser::create(
+            array(
+                'customer_id' => $customer->id,
+                'user_id' => Auth::id(),
+                'created_at' => '',
+                'updated_at' => ''
+            )
+        );
+
+        return redirect('/home');
     }
 
     /**
